@@ -4,17 +4,41 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char *argv[]) {
+	int x,y; //두개의 입력 정수
+	char op; //연산자 문자
+	int result; 
 	
-	int sum=0;//누적으로 더할 거라 0으로 초기화 
-	int x;//변수는 꼭 처음부터 다 설정할 필요 없음. 하다가 넣어도됨  
-	int i;//왜 for 위로 넣으면 안됨? 
+	printf("enter the calculation: ");
+	scanf("%d %c %d", &x,&op,&y);
 	
-	printf("정수를 입력하시오");
-	scanf("%d", &x);
+	//연산자에 따라 결과값을 계산(result에 저장)
+	if (op=='+')//op='+'아님 
+		result=x+y;
+	else if (op=='-')
+		result=x-y;
+	else if (op=='*')
+		result=x*y;
+	else if (op=='/')
+		result=x/y;
+		
+	switch(op)//switch로 할 경우 
+	{
+		
+		case '+':
+			result=x+y;
+			break;
+		case '-':
+			result=x-y;
+			break;
+		case '*':
+			result=x*y;
+			break;
+		case '/':
+			result=x/y;
+			break;
+	 } 
 	
-	//for문을 활용해서 1부터 x까지 sum에 더하는 코 
-	for (i=0;i<=x;i++)//반복 (초기식;조건식;증감식) 
-		sum=sum+i;//더하기 
-	
-	printf("더하기 결과는 %i입니다", sum);//결과 출력 
+	//printf로 출력
+	printf("=%i\n",result); 
+	return 0; 
 }
