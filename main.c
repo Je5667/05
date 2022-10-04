@@ -20,9 +20,8 @@ int main(int argc, char *argv[]) {
 			printf("low!");
 		trial=trial+1;
 		}
-	while (x!=answer);
-	
-	//정답과 같은지 여부 판단 
+	while (x!=answer);//while문은 항상 끝에 
+	 
 	printf("congradulation! trials: %i\n", trial);
 
 	return 0;
